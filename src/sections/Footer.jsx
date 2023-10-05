@@ -1,8 +1,11 @@
 import { copyrightSign } from "../assets/icons";
 import { footerLogo } from "../assets/images";
 import { footerLinks, socialMedia } from "../Constants";
+// import { useHistory } from "react-router-dom";
 
 const Footer = () => {
+  // const history = useHistory();
+  const navigateTo = (link) => window.open(link, '_blank');;
   return (
     <footer className='max-container'>
       <div className='flex justify-between items-start gap-20 flex-wrap max-lg:flex-col'>
@@ -26,7 +29,7 @@ const Footer = () => {
               <div
                 className='flex justify-center items-center w-12 h-12 bg-white rounded-full cursor-pointer'
                 key={icon.alt}
-                onClick={()=>{console.log(icon.alt)}}
+                onClick={()=>{navigateTo(icon.link)}}
               >
                 <img src={icon.src} alt={icon.alt} width={24} height={24} />
               </div>
